@@ -19,6 +19,7 @@
             <li><a href="#usage">Results</a></li>
             <li><a href="#api-errors">API errors</a></li>
             <li><a href="#spec-length">Specifying a length</a></li>
+            <li><a href="#settings">Settings</a></li>
             <li><a href="#deploy">Deploy</a></li>
             <li><a href="https://github.com/toolen/passgen" target="_blank">GitHub</a></li>
         </ul>
@@ -44,16 +45,24 @@
             <p>The API will provide you with a JSON object that you can parse and apply to your application.</p>
             <pre><code>{"password": "6;HgyR"}</code></pre>
         </section>
-            <section>
+        <section>
             <h2 id="api-errors">API errors</h2>
             <p>If API service experiencing server issues, we'll return a simple JSON object with an error.</p>
             <pre><code>{"title": "Invalid parameter", "description": "The \"length\" parameter is invalid. Less than the minimum length 4."}</code></pre>
         </section>
-        </section>
-            <section>
+        <section>
             <h2 id="spec-length">Specifying a length</h2>
             <p>You can specify a length of generated password by adding the "length" parameter to your request. Valid values for the parameter from 4 to 254. If parameter not specified default values is 6.</p>
             <pre><code>https://zakharov.cc/passgen/api/v1/passwords/?length=6</code></pre>
+        </section>
+        <section>
+            <h2 id="settings">Settings</h2>
+            <h3>CORS</h3>
+            <p>You can disable CORS by environment variable:</p>
+            <pre><code>PASSGEN_CORS_ENABLED=False</code></pre>
+            <h3>Gunicorn</h3>
+            <p>Gunicorn settings can be specified by using environment variable GUNICORN_CMD_ARGS. All available command line arguments can be used. For example, to specify the bind address and number of workers:</p>
+            <pre><code>GUNICORN_CMD_ARGS="--bind=127.0.0.1:8080 --workers=3"</code></pre>
         </section>
         <section>
             <h2 id="deploy">Deploy</h2>
