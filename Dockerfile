@@ -17,4 +17,4 @@ RUN apk add --no-cache \
         adduser -S -G gunicorn gunicorn && \
         chown -R gunicorn:gunicorn passgen
 
-CMD ["gunicorn", "-u", "gunicorn", "-g", "gunicorn", "passgen.app:application"]
+CMD ["gunicorn", "-u", "gunicorn", "-g", "gunicorn", "--access-logfile", "-", "passgen.app:application"]
