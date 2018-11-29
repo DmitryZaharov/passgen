@@ -2,8 +2,6 @@ version: "3"
 services: 
   passgen:
     # build: .
-    # image: dockerimg.evelopers.com/dzakharov/passgen:1
-    image: dzakharov/passgen:1
-    restart: always
+    image: dockerimg.evelopers.com/dzakharov/passgen:1
     ports:
       - 127.0.0.1:8080:80
