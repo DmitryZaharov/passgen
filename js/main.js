@@ -12,7 +12,7 @@
             return false;
         }
         httpRequest.onreadystatechange = alertContents;
-        httpRequest.open('GET', 'https://zakharov.cc/passgen/api/v1/passwords/?length=' + len.value);
+        httpRequest.open('GET', 'https://passgen.zakharov.cc/api/v1/passwords/?length=' + len.value);
         httpRequest.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
         httpRequest.responseType = 'json';
         httpRequest.send();
